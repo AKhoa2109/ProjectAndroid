@@ -94,7 +94,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
             <TextView
-                android:id="@+id/tvForgotPassword"
+                android:id="@+id/txtForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quên mật khẩu?"

@@ -1,11 +1,10 @@
 package vn.anhkhoa.projectwebsitebantailieu;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,38 +12,26 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    Button btnSignIn;
-    TextView txtForgetPass;
-
+public class ForgetPassword extends AppCompatActivity {
+    Button btnXacNhanOTP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_forget_password);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-
         //anh xa
-        btnSignIn = (Button) findViewById(R.id.btnSignin);
-        txtForgetPass = (TextView) findViewById(R.id.txtForgotPassword);
+        btnXacNhanOTP = (Button) findViewById(R.id.btnSubmitOTP);
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnXacNhanOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SignUp.class);
-                startActivity(intent);
-            }
-        });
-
-        txtForgetPass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ForgetPassword.class);
+                Intent intent = new Intent(ForgetPassword.this, VerificationOTP.class);
                 startActivity(intent);
             }
         });
